@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="accountDao" class="kz.asetkenes.solidbankapp.data.impl.MemoryAccountDao"/>
+
+    <bean id="accountCreationServiceImpl" class="kz.asetkenes.solidbankapp.services.AccountCreationServiceImpl">
+        <constructor-arg ref="accountDao"/>
+    </bean>
+
+    <bean id="accountListingServiceImpl" class="kz.asetkenes.solidbankapp.services.AccountListingServiceImpl">
+        <property name="accountDao">
+            <ref bean="accountDao"/>
+        </property>
+    </bean>
+
+    <bean id="bankCore" class="kz.asetkenes.solidbankapp.domain.BankCore">
+        <constructor-arg ref="accountCreationServiceImpl"/>
+    </bean>
+
+    <bean id="myCli" class="kz.asetkenes.solidbankapp.ui.MyCli"/>
+
+    <bean id="accountBasicCli" class="kz.asetkenes.solidbankapp.ui.AccountBasicCli">
+        <constructor-arg ref="myCli"/>
+        <constructor-arg ref="bankCore"/>
+        <constructor-arg ref="accountListingServiceImpl"/>
+    </bean>
+
+</beans>

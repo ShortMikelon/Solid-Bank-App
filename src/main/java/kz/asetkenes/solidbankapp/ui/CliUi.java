@@ -1,6 +1,8 @@
 package kz.asetkenes.solidbankapp.ui;
 
-public interface CliUi extends CreateAccountOperationUi {
+import kz.asetkenes.solidbankapp.ui.transaction.WithdrawDepositOperationCliUi;
+
+public interface CliUi extends CreateAccountOperationUi, WithdrawDepositOperationCliUi   {
     
 }
 

@@ -23,14 +23,38 @@ public class MyCli implements CliUi {
         String inputAccountType = scanner.nextLine();
         String inputAccountTypeUpperCase = inputAccountType.toUpperCase();
 
-        AccountType accountType = switch (inputAccountTypeUpperCase) {
+        return switch (inputAccountTypeUpperCase) {
             case "CHECKING" -> AccountType.CHECKING;
             case "SAVING" -> AccountType.SAVING;
             case "FIXED" -> AccountType.FIXED;
             default -> throw new IllegalArgumentException("Incorrect AccountType");
         };
+    }
 
-        return accountType;
+    @Override
+    public double requestClientAmount() {
+        boolean isDouble;
+        double amount = 0;
+
+        do {
+            System.out.print("Input amount: ");
+            try {
+                amount = Double.parseDouble(scanner.nextLine());
+                isDouble = true;
+            } catch (NumberFormatException ex) {
+                System.out.println("Incorrect amount please try again");
+                isDouble = false;
+            }
+        } while (!isDouble);
+
+        return amount;
+    }
+
+    @Override
+    public String requestClientAccountNumber() {
+        System.out.print("Input account number: ");
+
+        return scanner.nextLine();
     }
 
     public Scanner getScanner() {

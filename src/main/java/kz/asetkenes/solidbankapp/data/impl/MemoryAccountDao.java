@@ -4,11 +4,13 @@ import kz.asetkenes.solidbankapp.data.AccountDao;
 import kz.asetkenes.solidbankapp.domain.entities.Account;
 import kz.asetkenes.solidbankapp.domain.entities.AccountType;
 import kz.asetkenes.solidbankapp.domain.entities.AccountWithdraw;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+@Repository
 public class MemoryAccountDao implements AccountDao {
 
     private final List<Account> accountList = new ArrayList<>();

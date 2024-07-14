@@ -12,8 +12,8 @@ public class Transaction {
 
     @NonNull private String clientId;
 
-    private double amount;
+    private final double amount;
 
-    private long createdAt;
+    private final long createdAt;
 
 }

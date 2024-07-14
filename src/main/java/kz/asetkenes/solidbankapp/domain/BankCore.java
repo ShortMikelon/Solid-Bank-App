@@ -18,11 +18,11 @@ public class BankCore {
     }
 
     public void createNewAccount(AccountType accountType, String clientId) {
-        accountCreation.create(accountType, id, clientId, this.lastAccountNumber);
+        accountCreation.create(accountType, ID, clientId, this.lastAccountNumber);
         incrementLastAccountNumber();
     }
 
-    private static long id = 1;
+    private static final long ID = 1;
 
     private void incrementLastAccountNumber() {
         this.lastAccountNumber++;

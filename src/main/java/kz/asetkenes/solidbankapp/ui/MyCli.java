@@ -1,11 +1,17 @@
 package kz.asetkenes.solidbankapp.ui;
 
 import kz.asetkenes.solidbankapp.domain.entities.AccountType;
+import lombok.Getter;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.Scanner;
 
+@Getter
+@Component
 public class MyCli implements CliUi {
 
+    @Autowired
     private final Scanner scanner;
 
     public MyCli() {
@@ -57,7 +63,4 @@ public class MyCli implements CliUi {
         return scanner.nextLine();
     }
 
-    public Scanner getScanner() {
-        return scanner;
-    }
 }

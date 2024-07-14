@@ -4,9 +4,12 @@ import kz.asetkenes.solidbankapp.domain.BankCore;
 import kz.asetkenes.solidbankapp.domain.entities.Account;
 import kz.asetkenes.solidbankapp.domain.entities.AccountType;
 import kz.asetkenes.solidbankapp.services.impl.AccountListingService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+@Component
 public class AccountBasicCli {
 
     private final CreateAccountOperationUi createAccountOperationUi;
@@ -15,6 +18,7 @@ public class AccountBasicCli {
 
     private final AccountListingService accountListing;
 
+    @Autowired
     public AccountBasicCli(
             CreateAccountOperationUi createAccountOperationUi,
             BankCore bankCore,

@@ -1,4 +1,4 @@
-package kz.asetkenes.solidbankapp.services.account.impl;
+package kz.asetkenes.solidbankapp.services.account;
 
 import kz.asetkenes.solidbankapp.domain.account.entities.AccountWithdraw;
 

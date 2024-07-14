@@ -1,8 +1,8 @@
 package kz.asetkenes.solidbankapp.cli.transaction;
 
-import kz.asetkenes.solidbankapp.domain.account.entities.AccountWithdraw;
+import kz.asetkenes.solidbankapp.domain.account.entities.Account;
 import kz.asetkenes.solidbankapp.domain.transaction.TransactionWithdraw;
-import kz.asetkenes.solidbankapp.services.account.impl.AccountListingService;
+import kz.asetkenes.solidbankapp.services.account.AccountListingService;
 import kz.asetkenes.solidbankapp.ui.transaction.WithdrawDepositOperationCliUi;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -29,10 +29,15 @@ public class TransactionWithdrawCli {
 
     public void withdrawMoney(String clientId) {
         String accountId = withdrawDepositOperationCliUi.requestClientAccountNumber();
-        AccountWithdraw account = accountListingService.getClientWithdrawAccount(clientId, accountId);
+        Account account = accountListingService.getClientAccount(clientId, accountId);
 
         if (account == null) {
             System.out.println("Account not founded");
+            return;
+        }
+
+        if (!account.isWithdrawAllowed()) {
+            System.out.println("Unable to withdraw money from savings account");
             return;
         }
 
@@ -42,6 +47,7 @@ public class TransactionWithdrawCli {
             System.out.println("Amount is zero or negative");
             return;
         }
+
         if (amount > account.getBalance()) {
             System.out.println("Amount is more than the balance ");
             return;

@@ -1,7 +1,8 @@
 package kz.asetkenes.solidbankapp.services.account.impl;
 
 import kz.asetkenes.solidbankapp.data.account.AccountDao;
-import kz.asetkenes.solidbankapp.domain.account.entities.AccountWithdraw;
+import kz.asetkenes.solidbankapp.domain.account.entities.Account;
+import kz.asetkenes.solidbankapp.services.account.AccountWithdrawService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,7 +17,7 @@ public class AccountWithdrawServiceImpl implements AccountWithdrawService {
     }
 
     @Override
-    public void withdraw(double amount, AccountWithdraw account) {
+    public void withdraw(double amount, Account account) {
         double balance = account.getBalance();
 
         double newBalance = balance - amount;

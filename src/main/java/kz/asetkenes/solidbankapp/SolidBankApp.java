@@ -1,6 +1,6 @@
 package kz.asetkenes.solidbankapp;
 
-import kz.asetkenes.solidbankapp.ui.AccountBasicCli;
+import kz.asetkenes.solidbankapp.cli.AccountBasicCli;
 import kz.asetkenes.solidbankapp.ui.MyCli;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;

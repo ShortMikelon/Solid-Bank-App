@@ -1,9 +1,10 @@
-package kz.asetkenes.solidbankapp.ui;
+package kz.asetkenes.solidbankapp.cli;
 
-import kz.asetkenes.solidbankapp.domain.BankCore;
-import kz.asetkenes.solidbankapp.domain.entities.Account;
-import kz.asetkenes.solidbankapp.domain.entities.AccountType;
-import kz.asetkenes.solidbankapp.services.impl.AccountListingService;
+import kz.asetkenes.solidbankapp.domain.account.BankCore;
+import kz.asetkenes.solidbankapp.domain.account.entities.Account;
+import kz.asetkenes.solidbankapp.domain.account.entities.AccountType;
+import kz.asetkenes.solidbankapp.services.account.impl.AccountListingService;
+import kz.asetkenes.solidbankapp.ui.account.CreateAccountOperationUi;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

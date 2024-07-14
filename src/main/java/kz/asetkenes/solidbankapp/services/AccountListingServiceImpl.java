@@ -1,10 +1,10 @@
 package kz.asetkenes.solidbankapp.services;
 
-import kz.asetkenes.solidbankapp.data.AccountDao;
-import kz.asetkenes.solidbankapp.domain.entities.Account;
-import kz.asetkenes.solidbankapp.domain.entities.AccountType;
-import kz.asetkenes.solidbankapp.domain.entities.AccountWithdraw;
-import kz.asetkenes.solidbankapp.services.impl.AccountListingService;
+import kz.asetkenes.solidbankapp.data.account.AccountDao;
+import kz.asetkenes.solidbankapp.domain.account.entities.Account;
+import kz.asetkenes.solidbankapp.domain.account.entities.AccountType;
+import kz.asetkenes.solidbankapp.domain.account.entities.AccountWithdraw;
+import kz.asetkenes.solidbankapp.services.account.impl.AccountListingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

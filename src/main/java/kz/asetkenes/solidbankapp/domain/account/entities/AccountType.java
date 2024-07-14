@@ -1,4 +1,4 @@
-package kz.asetkenes.solidbankapp.domain.entities;
+package kz.asetkenes.solidbankapp.domain.account.entities;
 
 public enum AccountType {
     CHECKING,

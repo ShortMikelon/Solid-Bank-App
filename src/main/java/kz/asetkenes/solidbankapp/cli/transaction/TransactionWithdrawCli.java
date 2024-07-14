@@ -1,8 +1,8 @@
 package kz.asetkenes.solidbankapp.cli.transaction;
 
-import kz.asetkenes.solidbankapp.domain.entities.AccountWithdraw;
+import kz.asetkenes.solidbankapp.domain.account.entities.AccountWithdraw;
 import kz.asetkenes.solidbankapp.domain.transaction.TransactionWithdraw;
-import kz.asetkenes.solidbankapp.services.impl.AccountListingService;
+import kz.asetkenes.solidbankapp.services.account.impl.AccountListingService;
 import kz.asetkenes.solidbankapp.ui.transaction.WithdrawDepositOperationCliUi;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

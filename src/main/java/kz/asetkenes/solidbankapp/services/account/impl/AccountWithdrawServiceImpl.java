@@ -1,8 +1,7 @@
 package kz.asetkenes.solidbankapp.services.account.impl;
 
-import kz.asetkenes.solidbankapp.data.AccountDao;
-import kz.asetkenes.solidbankapp.domain.entities.AccountWithdraw;
-import kz.asetkenes.solidbankapp.services.account.AccountWithdrawService;
+import kz.asetkenes.solidbankapp.data.account.AccountDao;
+import kz.asetkenes.solidbankapp.domain.account.entities.AccountWithdraw;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

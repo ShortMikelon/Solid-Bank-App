@@ -1,7 +1,6 @@
 package kz.asetkenes.solidbankapp.services.account.impl;
 
-import kz.asetkenes.solidbankapp.domain.entities.AccountWithdraw;
-import kz.asetkenes.solidbankapp.services.account.AccountDepositService;
+import kz.asetkenes.solidbankapp.domain.account.entities.AccountWithdraw;
 import org.springframework.stereotype.Service;
 
 @Service

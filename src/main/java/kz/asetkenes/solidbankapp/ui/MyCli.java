@@ -1,6 +1,6 @@
 package kz.asetkenes.solidbankapp.ui;
 
-import kz.asetkenes.solidbankapp.domain.entities.AccountType;
+import kz.asetkenes.solidbankapp.domain.account.entities.AccountType;
 import lombok.Getter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

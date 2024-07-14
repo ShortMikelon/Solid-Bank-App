@@ -1,4 +1,4 @@
-package kz.asetkenes.solidbankapp.domain.entities;
+package kz.asetkenes.solidbankapp.domain.account.entities;
 
 public final class FixedAccount extends AccountDeposit {
 

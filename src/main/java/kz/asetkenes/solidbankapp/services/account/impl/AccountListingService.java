@@ -1,8 +1,8 @@
-package kz.asetkenes.solidbankapp.services.impl;
+package kz.asetkenes.solidbankapp.services.account.impl;
 
-import kz.asetkenes.solidbankapp.domain.entities.Account;
-import kz.asetkenes.solidbankapp.domain.entities.AccountType;
-import kz.asetkenes.solidbankapp.domain.entities.AccountWithdraw;
+import kz.asetkenes.solidbankapp.domain.account.entities.Account;
+import kz.asetkenes.solidbankapp.domain.account.entities.AccountType;
+import kz.asetkenes.solidbankapp.domain.account.entities.AccountWithdraw;
 
 import java.util.List;
 

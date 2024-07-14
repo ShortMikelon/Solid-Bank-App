@@ -1,9 +1,9 @@
-package kz.asetkenes.solidbankapp.data.impl;
+package kz.asetkenes.solidbankapp.data.account.impl;
 
-import kz.asetkenes.solidbankapp.data.AccountDao;
-import kz.asetkenes.solidbankapp.domain.entities.Account;
-import kz.asetkenes.solidbankapp.domain.entities.AccountType;
-import kz.asetkenes.solidbankapp.domain.entities.AccountWithdraw;
+import kz.asetkenes.solidbankapp.data.account.AccountDao;
+import kz.asetkenes.solidbankapp.domain.account.entities.Account;
+import kz.asetkenes.solidbankapp.domain.account.entities.AccountType;
+import kz.asetkenes.solidbankapp.domain.account.entities.AccountWithdraw;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;

@@ -1,8 +1,9 @@
 package kz.asetkenes.solidbankapp.services;
 
-import kz.asetkenes.solidbankapp.data.AccountDao;
+import kz.asetkenes.solidbankapp.data.account.AccountDao;
+import kz.asetkenes.solidbankapp.domain.account.entities.*;
 import kz.asetkenes.solidbankapp.domain.entities.*;
-import kz.asetkenes.solidbankapp.services.impl.AccountCreationService;
+import kz.asetkenes.solidbankapp.services.account.impl.AccountCreationService;
 import org.springframework.stereotype.Service;
 
 @Service

@@ -45,13 +45,16 @@ public class MemoryAccountDao implements AccountDao {
 
     @Override
     public AccountWithdraw getClientWithdrawAccount(String clientId, String accountId) {
-        Optional<Account> account = accountList
-                .stream()
-                .filter(item->item instanceof AccountWithdraw)
-                .filter(item->item.getClientId().equals(clientId) && item.getId().equals(accountId))
-                .findFirst();
+        AccountWithdraw account = null;
 
-        return (AccountWithdraw) account.orElse(null);
+        for (Account item : accountList) {
+            if (item instanceof AccountWithdraw && accountId.equals(item.getId())) {
+                account = (AccountWithdraw) item;
+                break;
+            }
+        }
+
+        return account;
     }
 
     @Override

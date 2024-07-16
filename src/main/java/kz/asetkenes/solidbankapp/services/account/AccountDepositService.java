@@ -1,7 +1,7 @@
 package kz.asetkenes.solidbankapp.services.account;
 
-import kz.asetkenes.solidbankapp.domain.account.entities.AccountWithdraw;
+import kz.asetkenes.solidbankapp.domain.account.entities.Account;
 
 public interface AccountDepositService {
-    void deposit(AccountWithdraw accountWithdraw, double amount);
+    void deposit(Account accountWithdraw, double amount);
 }

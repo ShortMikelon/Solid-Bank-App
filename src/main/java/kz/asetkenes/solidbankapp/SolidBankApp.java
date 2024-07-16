@@ -1,6 +1,9 @@
 package kz.asetkenes.solidbankapp;
 
 import kz.asetkenes.solidbankapp.cli.AccountBasicCli;
+import kz.asetkenes.solidbankapp.cli.transaction.TransactionDepositCli;
+import kz.asetkenes.solidbankapp.cli.transaction.TransactionWithdrawCli;
+import kz.asetkenes.solidbankapp.cli.transaction.TransferCli;
 import kz.asetkenes.solidbankapp.ui.MyCli;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -10,8 +13,14 @@ public class SolidBankApp {
         ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
         String clientId = "1";
 
-        AccountBasicCli basicCli = context.getBean(AccountBasicCli.class);
         MyCli myCli = context.getBean(MyCli.class);
+
+        AccountBasicCli basicCli = context.getBean(AccountBasicCli.class);
+
+        TransactionWithdrawCli withdrawCli = context.getBean(TransactionWithdrawCli.class);
+        TransactionDepositCli depositCli = context.getBean(TransactionDepositCli.class);
+
+        TransferCli transferCli = context.getBean(TransferCli.class);
 
         String helpMessage = """
 				1 - show accounts
@@ -25,23 +34,23 @@ public class SolidBankApp {
         boolean isFinished = false;
 
         System.out.println(helpMessage);
+
         while (!isFinished) {
-            System.out.print("Input number operation: ");
+            System.out.print("\nInput number operation: ");
             String inputOperationNumber = myCli.getScanner().nextLine();
 
             switch (inputOperationNumber) {
                 case "1" -> basicCli.getAccounts(clientId);
                 case "2" -> basicCli.createAccountRequest(clientId);
-                case "3" -> System.out.println("Not yet implementation");
-                case "4" -> System.out.println("Not yet implementation");
-                case "5" -> System.out.println("Not yet implementation");
+                case "3" -> depositCli.depositMoney(clientId);
+                case "4" -> withdrawCli.withdrawMoney(clientId);
+                case "5" -> transferCli.transfer(clientId);
                 case "6" -> System.out.println(helpMessage);
-                case "7" -> {
-                    System.out.println("Application closed");
-                    isFinished = true;
-                }
+                case "7" -> isFinished = true;
                 default -> System.out.println("Incorrect number operation. Please Again!");
             }
         }
+
+        System.out.println("Application closed");
     }
 }

@@ -6,11 +6,11 @@
 
     <bean id="accountDao" class="kz.asetkenes.solidbankapp.data.account.impl.MemoryAccountDao"/>
 
-    <bean id="accountCreationServiceImpl" class="kz.asetkenes.solidbankapp.services.AccountCreationServiceImpl">
+    <bean id="accountCreationServiceImpl" class="kz.asetkenes.solidbankapp.services.account.impl.AccountCreationServiceImpl">
         <constructor-arg ref="accountDao"/>
     </bean>
 
-    <bean id="accountListingServiceImpl" class="kz.asetkenes.solidbankapp.services.AccountListingServiceImpl">
+    <bean id="accountListingServiceImpl" class="kz.asetkenes.solidbankapp.services.account.impl.AccountListingServiceImpl">
         <property name="accountDao">
             <ref bean="accountDao"/>
         </property>

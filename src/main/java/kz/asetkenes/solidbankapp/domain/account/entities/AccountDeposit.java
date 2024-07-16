@@ -1,5 +1,7 @@
 package kz.asetkenes.solidbankapp.domain.account.entities;
 
+import kz.asetkenes.solidbankapp.exception.InsufficientFundsException;
+
 public class AccountDeposit extends Account {
 
     public AccountDeposit(AccountType accountType, String id, String clientId, double balance, boolean withdrawAllowed) {
@@ -8,7 +10,8 @@ public class AccountDeposit extends Account {
 
     @Override
     public void setBalance(double balance) {
-        throw new IllegalStateException("This is Deposit account");
+        if (balance < this.balance) throw new InsufficientFundsException("");
+        this.balance = balance;
     }
 
     @Override

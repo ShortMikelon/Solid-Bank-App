@@ -1,1 +1,1 @@
-Run file kz.asetkenes.solidbankapp.SolidBankApp.java
+To start the program you need to run the file kz.asetkenes.solidbankapp.SolidBankApp

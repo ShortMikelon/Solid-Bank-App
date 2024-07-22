@@ -27,6 +27,6 @@ public class AccountCreationServiceImpl implements AccountCreationService {
             account = new SavingAccount(accountType, id, clientId, 0.0, true);
         }
         
-        accountDao.createNewAccount(account);
+        accountDao.save(account);
     }
 }

@@ -2,23 +2,18 @@ package kz.asetkenes.solidbankapp.data.account;
 
 import kz.asetkenes.solidbankapp.domain.account.entities.Account;
 import kz.asetkenes.solidbankapp.domain.account.entities.AccountType;
-import kz.asetkenes.solidbankapp.domain.account.entities.AccountWithdraw;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-public interface AccountDao {
+@Repository
+public interface AccountDao extends JpaRepository<Account, String> {
 
-    void createNewAccount(Account account);
+    List<Account> findByClientId(String clientId);
 
-    void updateAccount(Account account);
+    List<Account> findByClientIdAndAccountType(String clientId, AccountType accountType);
 
-    List<Account> getClientAccounts(String clientId);
-
-    List<Account> getClientAccountsByType(String clientId, AccountType accountType);
-
-    AccountWithdraw getClientWithdrawAccount(String clientId, String accountId);
-
-    Account getClientAccount(String clientId, String accountId);
+    Account findByIdAndClientId(String id, String clientId);
 
 }
-

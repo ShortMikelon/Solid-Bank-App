@@ -36,6 +36,7 @@ public class TransactionWithdraw {
         accountWithdrawService.withdraw(amount, account);
 
         Transaction transaction = new Transaction(
+                0L,
                 TransactionType.WITHDRAW,
                 account.getId(),
                 account.getClientId(),
@@ -43,6 +44,6 @@ public class TransactionWithdraw {
                 System.currentTimeMillis()
         );
 
-        transactionDao.addTransaction(transaction);
+        transactionDao.save(transaction);
     }
 }

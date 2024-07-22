@@ -19,7 +19,10 @@ public class TransactionDeposit {
     private final AccountDepositService accountDepositService;
 
     @Autowired
-    public TransactionDeposit(AccountDepositService accountDepositService, TransactionDao transactionDao) {
+    public TransactionDeposit(
+            AccountDepositService accountDepositService,
+            TransactionDao transactionDao
+    ) {
         this.accountDepositService = accountDepositService;
         this.transactionDao = transactionDao;
     }
@@ -30,14 +33,13 @@ public class TransactionDeposit {
 
         accountDepositService.deposit(account, amount);
 
-        Transaction newTransaction = new Transaction(
+        Transaction newTransaction = new Transaction(0L,
                 TransactionType.DEPOSIT,
                 account.getId(),
                 account.getClientId(),
                 amount,
-                System.currentTimeMillis()
-        );
+                System.currentTimeMillis());
 
-        transactionDao.addTransaction(newTransaction);
+        transactionDao.save(newTransaction);
     }
 }

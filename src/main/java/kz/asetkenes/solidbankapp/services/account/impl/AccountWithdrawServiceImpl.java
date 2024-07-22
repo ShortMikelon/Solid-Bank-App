@@ -23,6 +23,6 @@ public class AccountWithdrawServiceImpl implements AccountWithdrawService {
         double newBalance = balance - amount;
         account.setBalance(newBalance);
 
-        accountDao.updateAccount(account);
+        accountDao.save(account);
     }
 }

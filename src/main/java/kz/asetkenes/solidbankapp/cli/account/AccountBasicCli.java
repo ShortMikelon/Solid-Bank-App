@@ -1,4 +1,4 @@
-package kz.asetkenes.solidbankapp.cli;
+package kz.asetkenes.solidbankapp.cli.account;
 
 import kz.asetkenes.solidbankapp.domain.account.BankCore;
 import kz.asetkenes.solidbankapp.domain.account.entities.Account;

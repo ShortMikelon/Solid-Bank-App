@@ -1,23 +1,35 @@
 package kz.asetkenes.solidbankapp.domain.account.entities;
 
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.Getter;
+import jakarta.persistence.*;
+import lombok.*;
 
-@Data
+@Getter
+@Setter
 @AllArgsConstructor
-public class Account {
+@NoArgsConstructor
+@Entity(name = "account")
+@Table(name = "accounts")
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorValue("account")
+public abstract class Account {
 
-    protected AccountType accountType;
-
+    @Id
+    @Column(name = "account_id")
     protected String id;
 
+    @Column(name = "account_type")
+    @Enumerated(EnumType.STRING)
+    protected AccountType accountType;
+
+    @Column(name = "client_id")
     protected String clientId;
 
     protected double balance;
 
-    @Getter(AccessLevel.NONE) protected final boolean withdrawAllowed;
+    @Getter(AccessLevel.NONE)
+    @Setter(AccessLevel.NONE)
+    @Column(name = "withdraw_allowed")
+    protected boolean withdrawAllowed;
 
     public boolean isWithdrawAllowed() {
         return withdrawAllowed;
@@ -26,7 +38,12 @@ public class Account {
 
     @Override
     public String toString() {
-        return String.format("Account: { id = %s, clientId = %s, balance = %.2f }", this.id, this.clientId, this.balance);
+        return String.format(
+                "Account: { id = %s, clientId = %s, balance = %.2f }",
+                this.id,
+                this.clientId,
+                this.balance
+        );
     }
 
 }

@@ -1,19 +1,33 @@
 package kz.asetkenes.solidbankapp.domain.transaction.entities;
 
-import lombok.Data;
-import lombok.NonNull;
+import jakarta.persistence.*;
+import lombok.*;
 
-@Data
+@Getter
+@Setter
+@Entity
+@AllArgsConstructor
+@NoArgsConstructor
 public class Transaction {
 
-    @NonNull private TransactionType transactionType;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "transaction_id")
+    private Long id;
 
-    @NonNull private String accountId;
+    @Column(name = "transaction_type")
+    @Enumerated(EnumType.STRING)
+    private TransactionType transactionType;
 
-    @NonNull private String clientId;
+    @Column(name = "account_id")
+    private String accountId;
 
-    private final double amount;
+    @Column(name = "client_id")
+    private String clientId;
 
-    private final long createdAt;
+    private double amount;
+
+    @Column(name = "created_at")
+    private long createdAt;
 
 }

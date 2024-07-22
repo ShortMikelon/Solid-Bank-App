@@ -1,11 +1,23 @@
 package kz.asetkenes.solidbankapp.domain.account.entities;
 
+import jakarta.persistence.DiscriminatorValue;
+import jakarta.persistence.Entity;
 import kz.asetkenes.solidbankapp.exception.InsufficientFundsException;
+import lombok.NoArgsConstructor;
 
-public class AccountDeposit extends Account {
+@Entity
+@NoArgsConstructor
+@DiscriminatorValue("deposit")
+public abstract class AccountDeposit extends Account {
 
-    public AccountDeposit(AccountType accountType, String id, String clientId, double balance, boolean withdrawAllowed) {
-        super(accountType, id, clientId, balance, withdrawAllowed);
+    public AccountDeposit(
+            String id,
+            AccountType accountType,
+            String clientId,
+            double balance,
+            boolean withdrawAllowed
+    ) {
+        super(id, accountType, clientId, balance, withdrawAllowed);
     }
 
     @Override
@@ -16,7 +28,12 @@ public class AccountDeposit extends Account {
 
     @Override
     public String toString() {
-        return String.format("Account Deposit: { id = %s, clientId = %s }", this.id, this.clientId);
+        return String.format(
+                "Account Deposit: { id = %s, clientId = %s }",
+                this.id,
+                this.clientId
+        );
     }
 }
+
 

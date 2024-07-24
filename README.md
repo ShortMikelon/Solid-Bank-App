@@ -6,6 +6,8 @@
 
 Задание SolidBankApp2 это ветка part_2
 
+Задание Bank App Repository это ветка feature/repository
+
 # Как запустить
 
-Нужно скомпилировать класс SolidBankApp.java
+Нужно скомпилировать класс kz.asetkenes.solidbankapp.SolidBankApp.java

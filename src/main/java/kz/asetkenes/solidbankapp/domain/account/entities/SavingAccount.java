@@ -1,10 +1,12 @@
 package kz.asetkenes.solidbankapp.domain.account.entities;
 
+import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
 @Entity
+@DiscriminatorValue("saving")
 public class SavingAccount extends AccountWithdraw {
 
     public SavingAccount(AccountType accountType, String id, String clientId, double balance, boolean withdrawAllowed) {

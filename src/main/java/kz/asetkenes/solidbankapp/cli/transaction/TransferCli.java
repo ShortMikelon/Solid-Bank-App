@@ -1,5 +1,6 @@
 package kz.asetkenes.solidbankapp.cli.transaction;
 
+import jakarta.transaction.Transactional;
 import kz.asetkenes.solidbankapp.domain.account.entities.Account;
 import kz.asetkenes.solidbankapp.domain.transaction.TransactionDeposit;
 import kz.asetkenes.solidbankapp.domain.transaction.TransactionWithdraw;
@@ -36,6 +37,7 @@ public class TransferCli {
         this.accountListingService = accountListingService;
     }
 
+    @Transactional
     public void transfer(String clientId) {
         System.out.println("The account from which it is withdrawn");
         String withdrawAccountId = withdrawDepositOperationCliUi.requestClientAccountNumber();

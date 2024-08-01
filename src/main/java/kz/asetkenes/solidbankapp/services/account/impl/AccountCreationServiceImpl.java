@@ -17,7 +17,7 @@ public class AccountCreationServiceImpl implements AccountCreationService {
     }
 
     @Override
-    public void create(AccountType accountType, long bankId, String clientId, long accountId) {
+    public Account create(AccountType accountType, long bankId, String clientId, long accountId) {
         Account account;
         String id = String.format("%03d%06d", 1, accountId);
 
@@ -29,6 +29,6 @@ public class AccountCreationServiceImpl implements AccountCreationService {
             account = new SavingAccount(accountType, id, clientId, 0.0, true);
         }
 
-        accountDao.save(account);
+        return accountDao.save(account);
     }
 }

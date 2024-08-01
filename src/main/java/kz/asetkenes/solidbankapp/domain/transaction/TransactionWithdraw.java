@@ -29,7 +29,7 @@ public class TransactionWithdraw {
     public void execute(Account account, double amount) {
         if (account == null) throw new AccountNotFoundException();
         if (!account.isWithdrawAllowed()) throw new WithdrawalNotAllowedException();
-        if (amount <= 0) throw new NegativeAmountException("Amount is zero or negative");
+        if (amount < 0) throw new NegativeAmountException("Amount is negative");
         if (amount > account.getBalance())
             throw new InsufficientFundsException("Amount more than balance");
 

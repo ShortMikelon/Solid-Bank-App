@@ -1,6 +1,8 @@
 package kz.asetkenes.solidbankapp.domain.account;
 
+import kz.asetkenes.solidbankapp.domain.account.entities.Account;
 import kz.asetkenes.solidbankapp.domain.account.entities.AccountType;
+import kz.asetkenes.solidbankapp.exception.InvalidAccountTypeException;
 import kz.asetkenes.solidbankapp.services.account.AccountCreationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -17,9 +19,22 @@ public class BankCore {
         this.accountCreation = accountCreation;
     }
 
-    public void createNewAccount(AccountType accountType, String clientId) {
-        accountCreation.create(accountType, ID, clientId, this.lastAccountNumber);
+    public Account execute(String accountType, String clientId) {
+        AccountType _accountType = getAccountTypeByString(accountType);
+
+        Account newAccount = accountCreation.create(_accountType, ID, clientId, this.lastAccountNumber);
         incrementLastAccountNumber();
+
+        return newAccount;
+    }
+
+    private AccountType getAccountTypeByString(String accountTypeStr) {
+        try {
+            String _accountTypeStr = accountTypeStr.toUpperCase();
+            return AccountType.valueOf(_accountTypeStr);
+        } catch (IllegalArgumentException ex) {
+            throw new InvalidAccountTypeException();
+        }
     }
 
     private static final long ID = 1;

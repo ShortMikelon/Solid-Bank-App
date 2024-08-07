@@ -7,6 +7,7 @@ Bank App JWT - это REST API приложение на основе Spring Boo
 - СУБД h2
 - Spring Boot JPA
 - Миграции БД с flywaydb
+- Документация с Swagger
 
 ## Документация
 Основныe endpoints:

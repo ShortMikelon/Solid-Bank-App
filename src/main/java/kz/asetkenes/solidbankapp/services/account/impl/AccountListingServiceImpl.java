@@ -1,9 +1,9 @@
 package kz.asetkenes.solidbankapp.services.account.impl;
 
 import kz.asetkenes.solidbankapp.data.account.AccountDao;
-import kz.asetkenes.solidbankapp.domain.account.entities.Account;
-import kz.asetkenes.solidbankapp.domain.account.entities.AccountType;
-import kz.asetkenes.solidbankapp.domain.account.entities.AccountWithdraw;
+import kz.asetkenes.solidbankapp.domain.account.model.Account;
+import kz.asetkenes.solidbankapp.domain.account.model.AccountType;
+import kz.asetkenes.solidbankapp.domain.account.model.AccountWithdraw;
 import kz.asetkenes.solidbankapp.exception.AccountNotFoundException;
 import kz.asetkenes.solidbankapp.services.account.AccountListingService;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,4 +1,4 @@
-package kz.asetkenes.solidbankapp.domain.account.entities;
+package kz.asetkenes.solidbankapp.domain.account.model;
 
 import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
@@ -6,10 +6,10 @@ import lombok.NoArgsConstructor;
 
 @Entity
 @NoArgsConstructor
-@DiscriminatorValue("withdraw")
-public abstract class AccountWithdraw extends Account {
+@DiscriminatorValue("fixed")
+public final class FixedAccount extends AccountDeposit {
 
-    public AccountWithdraw(
+    public FixedAccount(
             AccountType accountType,
             String id,
             String clientId,
@@ -22,15 +22,11 @@ public abstract class AccountWithdraw extends Account {
     @Override
     public String toString() {
         return String.format(
-                "AccountWithdraw: id = %s, clientId = %s, balance = %.2f",
+                "Fixed Account: { id = %s, clientId = %s, balance = %.2f",
                 this.id,
                 this.clientId,
                 this.balance
         );
     }
 
-    @Override
-    public void setBalance(double balance) {
-        this.balance = balance;
-    }
 }

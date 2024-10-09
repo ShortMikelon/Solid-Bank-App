@@ -1,7 +1,7 @@
 package kz.asetkenes.solidbankapp.domain.account;
 
-import kz.asetkenes.solidbankapp.domain.account.entities.Account;
-import kz.asetkenes.solidbankapp.domain.account.entities.AccountType;
+import kz.asetkenes.solidbankapp.domain.account.model.Account;
+import kz.asetkenes.solidbankapp.domain.account.model.AccountType;
 import kz.asetkenes.solidbankapp.exception.InvalidAccountTypeException;
 import kz.asetkenes.solidbankapp.services.account.AccountCreationService;
 import org.springframework.beans.factory.annotation.Autowired;

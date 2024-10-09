@@ -1,4 +1,4 @@
-package kz.asetkenes.solidbankapp.domain.account.entities;
+package kz.asetkenes.solidbankapp.domain.account.model;
 
 import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
@@ -6,26 +6,31 @@ import lombok.NoArgsConstructor;
 
 @Entity
 @NoArgsConstructor
-@DiscriminatorValue("checking")
-public class CheckingAccount extends AccountWithdraw {
+@DiscriminatorValue("withdraw")
+public abstract class AccountWithdraw extends Account {
 
-    public CheckingAccount(
+    public AccountWithdraw(
             AccountType accountType,
             String id,
             String clientId,
             double balance,
             boolean withdrawAllowed
     ) {
-        super(accountType, id, clientId, balance, withdrawAllowed);
+        super(id, accountType, clientId, balance, withdrawAllowed);
     }
 
     @Override
     public String toString() {
         return String.format(
-                "Checking Account: { id = %s, clientId = %s, balance = %.2f }",
+                "AccountWithdraw: id = %s, clientId = %s, balance = %.2f",
                 this.id,
                 this.clientId,
                 this.balance
         );
+    }
+
+    @Override
+    public void setBalance(double balance) {
+        this.balance = balance;
     }
 }

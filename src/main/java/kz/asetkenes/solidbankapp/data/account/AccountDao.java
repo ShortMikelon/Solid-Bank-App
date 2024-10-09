@@ -1,7 +1,7 @@
 package kz.asetkenes.solidbankapp.data.account;
 
-import kz.asetkenes.solidbankapp.domain.account.entities.Account;
-import kz.asetkenes.solidbankapp.domain.account.entities.AccountType;
+import kz.asetkenes.solidbankapp.domain.account.model.Account;
+import kz.asetkenes.solidbankapp.domain.account.model.AccountType;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

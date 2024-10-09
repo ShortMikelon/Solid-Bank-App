@@ -1,8 +1,8 @@
 package kz.asetkenes.solidbankapp.domain.account;
 
-import kz.asetkenes.solidbankapp.domain.account.entities.Account;
-import kz.asetkenes.solidbankapp.domain.account.entities.AccountType;
-import kz.asetkenes.solidbankapp.domain.account.entities.CheckingAccount;
+import kz.asetkenes.solidbankapp.domain.account.model.Account;
+import kz.asetkenes.solidbankapp.domain.account.model.AccountType;
+import kz.asetkenes.solidbankapp.domain.account.model.CheckingAccount;
 import kz.asetkenes.solidbankapp.services.account.AccountCreationService;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;

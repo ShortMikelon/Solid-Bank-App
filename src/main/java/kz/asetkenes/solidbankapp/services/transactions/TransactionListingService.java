@@ -1,8 +1,6 @@
 package kz.asetkenes.solidbankapp.services.transactions;
 
-import kz.asetkenes.solidbankapp.data.transactions.TransactionDao;
-import kz.asetkenes.solidbankapp.domain.transaction.entities.Transaction;
-import org.springframework.beans.factory.annotation.Autowired;
+import kz.asetkenes.solidbankapp.domain.transaction.model.Transaction;
 
 import java.util.List;
 

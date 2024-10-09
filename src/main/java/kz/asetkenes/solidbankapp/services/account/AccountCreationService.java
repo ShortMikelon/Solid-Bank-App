@@ -1,7 +1,7 @@
 package kz.asetkenes.solidbankapp.services.account;
 
-import kz.asetkenes.solidbankapp.domain.account.entities.Account;
-import kz.asetkenes.solidbankapp.domain.account.entities.AccountType;
+import kz.asetkenes.solidbankapp.domain.account.model.Account;
+import kz.asetkenes.solidbankapp.domain.account.model.AccountType;
 
 public interface AccountCreationService {
 

@@ -1,4 +1,4 @@
-package kz.asetkenes.solidbankapp.domain.account.entities;
+package kz.asetkenes.solidbankapp.domain.account.model;
 
 import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;

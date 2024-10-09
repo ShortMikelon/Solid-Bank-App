@@ -1,4 +1,4 @@
-package kz.asetkenes.solidbankapp.domain.transaction.entities;
+package kz.asetkenes.solidbankapp.domain.transaction.model;
 
 public enum TransactionType {
     

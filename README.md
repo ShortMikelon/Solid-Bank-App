@@ -1,13 +1,9 @@
-# Bank App JWT
+# Bank App 
 
-Bank App JWT - это REST API приложение на основе Spring Boot c Spring Security и Json Web Token.
+Bank App - это REST API приложение на основе Spring Boot c Spring Security и Json Web Token.
 Используется cборка Spring приложения через авто-конфигурацию. Для скрытия очевидных операций и
 для улучшения читабельности кода использован lombok.
-Для работы с данными используется:
-- СУБД h2
-- Spring Boot JPA
-- Миграции БД с flywaydb
-- Документация с Swagger
+Для рабagger
 
 ## Документация
 Основныe endpoints:
@@ -46,13 +42,8 @@ http://localhost:8080/swagger-ui/index.html
     ```bash
     cd solidbankapp
     ```
-    
-3. **Перейти на ветку feature/jwt**
-   ```bash
-    git checkout feature/jwt
-    ```
    
-4. **Запуск приложения:**
+3. **Запуск приложения:**
     ```bash
     mvn spring-boot:run
     ```
